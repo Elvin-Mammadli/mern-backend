@@ -10,6 +10,10 @@ app.use(cors());
 
 mongoose.connect("mongodb+srv://mernfirst:12345@backend-practice.z2wab.mongodb.net/mern-first?retryWrites=true&w=majority")
 
+app.get('/', (req, res) => {
+  console.log('"/" endpoint works')
+})
+
 app.get('/getUsers', (req, res) => {
   UserModel.find({}, (err, data) => {
     if(err) {
