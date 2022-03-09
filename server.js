@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 const mongoose = require('mongoose');
 const UserModel = require('./Users');
-const cors = require('cors');
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors());
 
 mongoose.connect("mongodb+srv://mernfirst:12345@backend-practice.z2wab.mongodb.net/mern-first?retryWrites=true&w=majority")
 
